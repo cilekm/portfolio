@@ -57,65 +57,247 @@ selector {
 # Universal
 --------------------------------------------------------------*/
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
 }
-*, *:before, *:after {
+html {
+    box-sizing: border-box;
+    font-family: "Inter","Verdana","Arial",sans-serif;
+    background-color: black;
+}
+*, *:before, *:after{
     box-sizing: inherit;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/*the entire body of the html page*/
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+	background-image: url('public/subtle_carbon_background.webp');
+    background-repeat: repeat;
+    background-size: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* a wrapper around all the actual page content this will be centered on the page*/
+#wrapper {
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+    z-index: 0;
+    overflow-x: hidden;
 }
 
 /*--------------------------------------------------------------
 # General Elements
 --------------------------------------------------------------*/
-html, body {
-    display: flex;
-    flex-direction: column;
-    color: var(--primary-text-color);
-    background-color: var(--primary-background-color);
-}
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgb(0,0,0,0.6);
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav ul li a {
+    display: block;
+    text-align: center;
+    padding-block: 0.5em;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+  }
+
+nav ul li:hover {
+    background-color: rgb(204, 204, 204) !important;
+}
+
+nav ul li:hover a {
+    font-weight: 600;
+    color: black;
+}
 
 /*--------------------------------------------------------------
 # Header Area
 --------------------------------------------------------------*/
 header {
-    padding: 0.5em;
-    font-size: medium;
-    font-weight: bold;
-    background-color: var(--secondary-background-color);
-    box-shadow: rgba(0, 0, 0, 0.5) 0 4px 6px -1px,rgba(0, 0, 0, 0.5) 0 2px 4px -1px;
+    grid-area: header;
+    padding-top: 3em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5em;
 }
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: 500;
+    font-variant: small-caps;
+}
+
+header p {
+    margin: 0;
+    font-style: italic;
+    color: #a6a6a6;
+}
+
+header img {
+    object-fit: cover;
+    max-width: 50%;
+    border-radius: 50%;
+}
+
+img.faded-circle {
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+  
+  
+  
+  
+  
 
 /*--------------------------------------------------------------
 # Content Area
 --------------------------------------------------------------*/
 main {
+    grid-area: main;
+    color: white;
     flex: 1;
-    align-self: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+main section {
+    text-align: left;
+    margin-inline: 1em;
+    padding: 1.5em 0.25em;
+}
+
+main section span {
+    padding: 1em;
+}
+
+main section p {
+    font-weight: 200;
+}
+
+#interests {
+    list-style-type: none;
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
 # Footer Area
 --------------------------------------------------------------*/
 footer {
-    text-align: center;
+    grid-area: footer;
+    position: fixed;
     padding-block: 1em;
-    background-color: var(--surface-color);
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 0.75em;
+    font-style: italic;
+    background-color: rgb(0, 0, 0, 0.6);
 }
 
 /*--------------------------------------------------------------
 # Reusable Classes
 --------------------------------------------------------------*/
+h2 {
+    font-size: 1.75em;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 0.25em;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 600;
+}
 
 /*--------------------------------------------------------------
 # Other
 --------------------------------------------------------------*/
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
 
+#contact-info {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #a6a6a6;
+}
+#contact-info span {
+    display: block;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+}
+
+#contact-info span p {
+    text-decoration: none;
+    text-align: left;
+}
+
+#interests {
+    display: flex;
+    width: 100%;
+}
+
+#interests svg {
+    height: auto;
+}
+
+#interests li {
+    display: block;
+    justify-content: space-evenly;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
 
 /*--------------------------------------------------------------
 # Templates
@@ -126,35 +308,62 @@ footer {
 # Media Queries
 --------------------------------------------------------------*/
 
-@media screen and (max-width:555px) {
-}
-@media screen and (min-width:556px) {
-}
-
-@media screen and (min-width:556px) and (max-width: 665px) {
-}
-
-@media screen and (min-width:666px) {
-}
-
-@media screen and (min-width:666px) and (max-width:998px){
+/* for-phone-only */
+@media only screen and (max-width: 599px) {
     
 }
 
-@media screen and (min-width:999px){
+/* for-tablet-portrait-up */
+@media only screen and (min-width: 600px) {
+    
 }
 
-@media screen and (min-width:999px) and (max-width:1199px){
+/* for-tablet-portrait-only */
+@media only screen and (min-width: 600px) and (max-width: 899px) {
+    
+}
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
 
 }
 
-@media screen and (min-width:1200px){
+/* for-tablet-landscape-only */
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+    
 }
-@media screen and (min-width:1200px) and (max-width: 1449px){
 
-}
-@media screen and (min-width:1450px){
-    td {
-        max-width: 550px;
+/* for-desktop-up */
+@media only screen and (min-width: 1200px) {
+    header span p {
+        font-size: 1.5em;
     }
+    nav ul li a {
+        font-size: 1em;
+    }
+    #wrapper {
+        padding-bottom: 2em;
+    }
+    main section {
+        justify-self: center;
+        max-width: 60%;
+    }
+    footer {
+        font-size: 1em;
+    }
+
+    #interests svg {
+        width: 15em;
+        height: auto;
+    }
+}
+
+/* for-desktop-only */
+@media only screen and (min-width: 1200px) and (max-width: 1799px) {
+    
+}
+
+/* for-big-desktop-up */
+@media only screen and (min-width: 1800px) {
+    
 }
