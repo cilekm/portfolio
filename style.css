@@ -363,8 +363,11 @@ iframe {
 
 /* for-desktop-up */
 @media only screen and (min-width: 1200px) {
+    p {
+        font-size: 1em;
+    }
     #about {
-        max-width: 50vw;
+        max-width: 50%;
     }
 
     header span p {
@@ -376,7 +379,7 @@ iframe {
     
     main>section {
         justify-self: center;
-        max-width: 60%;
+        max-width: 75%;
     }
     footer {
         font-size: 1em;
@@ -388,12 +391,26 @@ iframe {
         margin-left: 1em;
     }
 
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+        text-align: center;
+    }
+
     #projects ul li {
         display: flex;
         align-items: center;
     }
-    #projects ul li h4 {
-        text-align: center;
+
+    main section section h3 {
+        font-size: 1.5em;
+    }
+
+    .icon {
+        width: 100px;
     }
 }
 
