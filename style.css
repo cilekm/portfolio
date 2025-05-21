@@ -206,13 +206,11 @@ main {
 main section {
     text-align: left;
     margin-inline: 1em;
-}
-
-main section span {
-    padding: 1em;
+    padding-block: 1em;
 }
 
 main section p {
+    font-size: 0.8em;
     font-weight: 200;
 }
 
@@ -242,8 +240,9 @@ h2 {
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 600;
+    padding-top: 1em;
 }
 
 h3 a {
@@ -308,10 +307,13 @@ h3 a:hover, a:focus {
     align-items: center;
 }
 #interests ul li img {
-    width: 50px;
+    width: 40px;
+    height: auto;
+    margin-top: 1em;
 }
 
 #interests ul li p {
+    font-size: 1em;
     font-weight: 700;
     font-variant: small-caps;
 
