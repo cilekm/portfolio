@@ -200,13 +200,12 @@ main {
     flex: 1;
     justify-content: center;
     align-items: center;
-    padding-bottom: 1em;
+    padding-bottom: 7vh;
 }
 
 main section {
     text-align: left;
     margin-inline: 1em;
-    padding: 1.5em 0.25em;
 }
 
 main section span {
@@ -215,11 +214,6 @@ main section span {
 
 main section p {
     font-weight: 200;
-}
-
-#interests {
-    list-style-type: none;
-    width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -245,13 +239,27 @@ h2 {
     font-size: 1.75em;
     font-weight: 300;
     text-align: center;
-    padding-bottom: 0.25em;
 }
 
 h3 {
     font-size: 1em;
     font-weight: 600;
 }
+
+h3 a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+  
+h3 a:visited {
+    color: #6a5acd;
+}
+  
+h3 a:hover, a:focus {
+    text-decoration: underline;
+    color: #104e8b; /* deeper blue on hover */
+}
+  
 
 /*--------------------------------------------------------------
 # Other
@@ -282,27 +290,37 @@ h3 {
 }
 
 #interests {
-    display: flex;
+    margin: 0;
     width: 100%;
 }
 
-#interests svg {
-    height: auto;
+#interests ul {
+    display: flex;
+    list-style-type: none;
+    align-items:baseline;
+    justify-content: space-evenly;
 }
 
-#interests li {
+#interests ul li {
     display: block;
-    justify-content: space-evenly;
     text-align: center;
     justify-content: center;
-    width: 100%;
     align-items: center;
+}
+#interests ul li img {
+    width: 50px;
+}
+
+#interests ul li p {
+    font-weight: 700;
+    font-variant: small-caps;
+
 }
 
 /*--------------------------------------------------------------
 # Templates
 --------------------------------------------------------------*/
-
+  
 
 /*--------------------------------------------------------------
 # Media Queries
