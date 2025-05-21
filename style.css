@@ -374,7 +374,7 @@ iframe {
         font-size: 1em;
     }
     
-    main section {
+    main>section {
         justify-self: center;
         max-width: 60%;
     }
@@ -386,6 +386,14 @@ iframe {
         height: 315px;
         width: 560px;
         margin-left: 1em;
+    }
+
+    #projects ul li {
+        display: flex;
+        align-items: center;
+    }
+    #projects ul li h4 {
+        text-align: center;
     }
 }
 
