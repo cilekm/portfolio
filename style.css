@@ -22,15 +22,6 @@ selector {
 >>> COLORS:	  
 ----------------------------------------------------------------
 /* Color scheme */
-:root {
-    --primary-background-color: #121212; /* 3A3335 0d0d0d */
-    --secondary-background-color: #1d1d1d;
-    --tertiary-background-color: #bb86fc;
-
-
-    --primary-text-color: #ffffff;
-    --primary-border-color: #ffffff;
-}
 /*
 
 
