@@ -343,6 +343,23 @@ iframe {
 
 /* for-tablet-portrait-up */
 @media only screen and (min-width: 600px) {
+    iframe {
+        height: 215px;
+        width: 520px;
+        margin-left: 1em;
+    }
+    .icon {
+        width: 75px;
+    }
+    main section section h3 {
+        font-size: 1.35em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+        text-align: center;
+        padding-top: 1em;
+    }
     
 }
 
@@ -353,6 +370,18 @@ iframe {
 
 /* for-tablet-landscape-up */
 @media only screen and (min-width: 900px) {
+    p {
+        font-size: 1em;
+    }
+    iframe {
+        height: 315px;
+        width: 560px;
+        margin-left: 1em;
+    }
+    
+    h3 {
+        font-size: 1em;
+    }
 
 }
 
@@ -411,6 +440,7 @@ iframe {
 
     .icon {
         width: 100px;
+        height: auto;
     }
 }
 
